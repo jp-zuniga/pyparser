@@ -1,0 +1,16 @@
+[report]
+  omit = [
+    "*/__init__.py",
+    "*/models.py",
+  ]
+
+  show_missing = true
+  skip_covered = true
+
+[run]
+  branch = true
+
+  omit = [
+    "*/__init__.py",
+    "*/models.py",
+  ]

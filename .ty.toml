@@ -1,0 +1,6 @@
+[rules]
+  all = "error"
+
+[terminal]
+  error-on-warning = true
+  output-format    = "concise"

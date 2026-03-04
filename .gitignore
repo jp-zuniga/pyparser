@@ -1,0 +1,12 @@
+__pycache__
+
+.direnv
+.env
+.venv
+
+.vscode/*
+!.vscode/extensions.json
+
+.coverage
+.pytest_cache
+.ruff_cache

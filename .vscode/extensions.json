@@ -1,0 +1,21 @@
+{
+  "recommendations": [
+    "astral-sh.ty",
+    "charliermarsh.ruff",
+    "EditorConfig.EditorConfig",
+    "ms-python.python",
+    "nefrob.vscode-just-syntax",
+    "tamasfe.even-better-toml"
+  ],
+  "unwantedRecommendations": [
+    "matangover.mypy",
+    "meta.pyrefly",
+    "ms-pyright.pyright",
+    "ms-python.autopep8",
+    "ms-python.black-formatter",
+    "ms-python.isort",
+    "ms-python.mypy-type-checker",
+    "ms-python.pylance",
+    "ms-python.pylint"
+  ]
+}

@@ -1,0 +1,8 @@
+[pytest]
+  addopts = [
+    "--cov-report=term-missing",
+    "--quiet",
+  ]
+
+  console_output_style = "count"
+  pythonpath           = ["src"]

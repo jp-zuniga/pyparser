@@ -1,0 +1,30 @@
+name: lint
+
+on:
+  push:
+    paths:
+      - "src/**"
+  pull_request:
+    paths:
+      - "src/**"
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v6
+
+      - name: ruff check
+        uses: astral-sh/ruff-action@v3
+        with:
+          args: "check --unsafe-fixes"
+          version: "latest"
+
+      - name: ruff format
+        uses: astral-sh/ruff-action@v3
+        with:
+          args: "format --check"
+          version: "latest"

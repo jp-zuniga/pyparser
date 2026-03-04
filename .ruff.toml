@@ -1,0 +1,29 @@
+preview = true
+
+[format]
+  preview = true
+
+[lint]
+  future-annotations = true
+  preview            = true
+  select             = ["ALL"]
+
+  ignore = [
+    "COM812",
+    "CPY001",
+    "D200",
+    "D202",
+    "D203",
+    "D212",
+  ]
+
+  [lint.isort]
+    case-sensitive         = true
+    combine-as-imports     = true
+    force-wrap-aliases     = true
+    order-by-type          = true
+    relative-imports-order = "closest-to-furthest"
+    required-imports       = ["from __future__ import annotations"]
+
+  [lint.per-file-ignores]
+    "src/__init__.py" = ["D400"]

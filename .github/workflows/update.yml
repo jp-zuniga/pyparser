@@ -1,0 +1,43 @@
+name: update
+
+on:
+  schedule:
+    - cron: "0 6 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v6
+
+      - name: install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          enable-cache: true
+          ignore-nothing-to-cache: true
+          version: "latest"
+
+      - name: update dependencies
+        run: uv sync --all-groups --upgrade
+
+      - name: create pr
+        uses: peter-evans/create-pull-request@v8
+        with:
+          assignees: jp-zuniga
+          committer: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
+          commit-message: "chore(deps): `uv sync --all-groups --upgrade`"
+          body: "`uv` new versions of some project dependencies."
+          base: "main"
+          branch: "chore/deps"
+          delete-branch: true
+          labels: dependencies,gh-actions
+          reviewers: jp-zuniga
+          title: "chore(deps): update all dependencies"
+          token: ${{ secrets.GITHUB_TOKEN }}
